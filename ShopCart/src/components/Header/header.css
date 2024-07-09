@@ -1,0 +1,44 @@
+
+
+.header__section {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height:50px;
+
+}
+
+.header__container {
+    max-width: 62.25vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    
+}
+
+.nav__list {
+    list-style: none;
+    background:var(--primary-color);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    padding: 20px;
+}
+
+.nav__item {
+    margin: 0;
+
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav__link:hover {
+    color: #cce5fd;
+}

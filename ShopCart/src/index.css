@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  color-scheme: light dark;
+  --primary-color: #007bff;
+  --secondary-color: #007bff;
+  --hover-color:  #71b1f5;
+  --primary-font: 'Roboto', sans-serif;
+  --bg-color:#e9ecef;
+  
+    --text-color: #333;
+    --subtitle-color: #666;
+    --card-bg: #fff;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --btn-bg: #007bff;
+    --btn-bg-hover: #0056b3;
+    --btn-text: #fff;
+
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+
+}
+
+.customBtn{
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 30px !important;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.customBtn:hover{
+  background: var(--hover-color);
+}

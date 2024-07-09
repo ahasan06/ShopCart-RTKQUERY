@@ -1,0 +1,75 @@
+:root {
+    --primary-color: #007bff;
+    --primary-font: 'Roboto', sans-serif;
+}
+
+.Product_Form {
+    max-width: 31.25vw; 
+    margin: 2.6vw auto; 
+    padding: 1.04vw; 
+    background-color: #fff;
+    box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.1); 
+    border-radius: 0.42vw; 
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.78vw; 
+}
+
+.form_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_input label {
+    font-weight: bold;
+    margin-bottom: 0.26vw; 
+    color: #333;
+}
+
+.form_input input,
+.form_input select,
+.form_input textarea {
+    padding: 0.52vw; 
+    border: 1px solid #ccc;
+    border-radius: 0.42vw; 
+    font-size: 0.83vw; 
+    color: #333;
+}
+
+.form_input textarea {
+    height: 4.17vw; 
+    resize: vertical;
+}
+
+.form_input input:focus,
+.form_input select:focus,
+.form_input textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0.26vw rgba(0, 123, 255, 0.5); 
+}
+
+.form_btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.04vw; 
+}
+
+.customBtn {
+    padding: 0.52vw 1.04vw; 
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 0.42vw; 
+    font-size: 0.83vw; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.customBtn:hover {
+    background-color: #0056b3; 
+}
