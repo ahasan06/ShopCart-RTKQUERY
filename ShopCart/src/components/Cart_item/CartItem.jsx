@@ -1,26 +1,70 @@
+/* eslint-disable react/prop-types */
 import "./cartItem.css"
-const CartItem = () => {
+import {useDispatch } from "react-redux";
+import { modifyCart,removeCart } from "../../store/reducers/CartReducer";
+import { useState } from "react";
+const CartItem = ({prod}) => {
+
+    console.log("prod",prod);
+    const [itemQty,setItemQty] = useState(prod.quantity)
+    const totalPrice = itemQty*prod.price
+
+    const dispatch = useDispatch()
+
+    const modifyCartHandler =(e)=>{
+
+        const newQuantity = e.target.value
+        if (Number(e.target.value)<1 || typeof newQuantity !== Number) {
+            alert("Cant Insert Unreal value")
+        }
+        else{   
+        dispatch(modifyCart(prod.id, newQuantity));
+        setItemQty(Number(newQuantity));
+    }
+    }
+
+    const removeFormcartHandler =()=>{
+        dispatch(removeCart(prod))
+    }
+    const increaseHandler =()=>{
+        const newQuantity = itemQty + 1;
+        setItemQty(newQuantity);
+        dispatch(modifyCart(prod.id, newQuantity));
+    }
+    const decreaseHandler =()=>{
+        const newQuantity = itemQty - 1;
+        if (newQuantity>0) {
+            setItemQty(newQuantity);
+            dispatch(modifyCart(prod.id, newQuantity));
+        }
+        else{
+            alert("Cant Insert Unreal value")
+        }
+    }
     return (
+
 
         <tr>
             <td className="product">
-                <img src="https://images.unsplash.com/photo-1527698266440-12104e498b76?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90oy1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                <img src={prod.image} alt="" />
             </td>
             <td>
-                <p>Product 1</p>
+                <p>{prod.name}</p>
             </td>
             <td>
-                <p>$500</p>
+                <p>${prod.price}</p>
             </td>
             <td>
             <div className="qty_input">
                     <button
                         className="qty_count qty__count_minus"
+                        onClick={decreaseHandler}
                     >
                         <figure>-</figure>
                     </button>
                     <input
-                    
+                        value={itemQty}
+                        onChange={modifyCartHandler}
                         className="product-qty"
                         type="text"
                         name="product-qty"
@@ -29,17 +73,18 @@ const CartItem = () => {
                     />
                     <button
                         className="qty_count qty__count_add"
+                        onClick={increaseHandler}
                     >
                         <figure>+</figure>
                     </button>
                 </div>
             </td>
             <td>
-                <p>$500</p>
+                <p>${totalPrice}</p>
             </td>
             <td>
                <div>
-                <button className="qty_count product__remove">  <figure>X</figure></button>
+                <button className="qty_count product__remove" onClick={removeFormcartHandler}>  <figure>X</figure></button>
                </div>
             </td>
         </tr>

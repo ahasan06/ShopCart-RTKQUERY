@@ -1,6 +1,17 @@
 import "./cart.css"
 import CartItem from './../../components/Cart_item/CartItem';
+import { useSelector,useDispatch } from "react-redux";
+import { clearCart } from "../../store/reducers/CartReducer";
 const Cart = () => {
+    const cart = useSelector(shopcart=>shopcart.cart)
+    const dispatch = useDispatch()
+    
+    let totalCart =  cart.reduce((acc,item)=>acc+item.price*item.quantity,0)
+
+    const clearCartHandler = ()=>{
+        dispatch(clearCart())
+    }
+
     return (
         <>
         <div className="cart__container">
@@ -18,13 +29,17 @@ const Cart = () => {
                         </tr>  
                     </thead>
                     <tbody className="cart__details">
-                    <CartItem/>
+                        {
+                        cart.map((item)=>(
+                            <CartItem prod={item} key={item.id}/>
+                        ))
+                        }
                     </tbody>
                 </table>
             </div>
-            <h2 className="total__price">Your Total Price Will be : <span>$600</span> </h2>
+            <h2 className="total__price">Your Total Price Will be : <span>$ {totalCart}</span> </h2>
             <div className="cart__actions">
-                <button className="clear__cart_btn">
+                <button className="clear__cart_btn" onClick={clearCartHandler}>
                     Clear Cart
                 </button>
             </div>

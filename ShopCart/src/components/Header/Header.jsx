@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
 import './header.css'
+import { useSelector } from "react-redux";
 
 const Header = () => {
+    const cart  = useSelector(shopCart=>shopCart.cart)
     return (
         <>
             <div className="header__section">
@@ -17,7 +19,7 @@ const Header = () => {
                         </li>
 
                         <li className="nav__item">
-                            <Link className="nav__link" to={"cart"}>Cart ({0})</Link>
+                            <Link className="nav__link" to={"cart"}>Cart ({cart.length})</Link>
                         </li>
 
                     </ul>

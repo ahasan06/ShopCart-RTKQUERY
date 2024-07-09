@@ -1,28 +1,57 @@
+/* eslint-disable react/prop-types */
 
 import './singlecart.css';
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeCart } from '../../store/reducers/CartReducer';
+const SingleCart = ({ prod }) => {
 
-const SingleCart = () => {
+    const cart = useSelector(storeState => storeState.cart)
+    console.log("cart", cart);
+    const dispatch = useDispatch()
+
+    const addToCartHander = () => {
+        dispatch(addToCart(prod))
+    }
+    const removeFormCartHandler = () => {
+        dispatch(removeCart(prod))
+    }
+
+    const IsinCart = cart.some(item => item.id == prod.id)
+    console.log("Is in cart", IsinCart);
+
     return (
         <>
-        <div className="cart__section">
-            <div className="cart__image">
-                <img src="https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4" alt="Product" />
-            </div>
-            <div className="cart__body">
-                <div className="cart__content">
-                    <p className="cart__item_name">Product 1</p>
-                    <p className="product__item_price">$500</p>
+            <div className="cart__section">
+                <div className="cart__image">
+                    <img src={prod.image} alt="Product" />
                 </div>
-                <div className="cart__btn">
-                    <div className="frombtn">
-                        <button>Add To Cart</button>
+                <div className="cart__body">
+                    <div className="cart__content">
+                        <p className="cart__item_name">{prod.name}</p>
+                        <p className="product__item_price">${prod.price}</p>
                     </div>
-                    <div className="frombtn">
-                        <button>Remove From Cart</button>
+                    <div className="cart__btn">
+                        {
+                            IsinCart ? (
+                                <div className="frombtn">
+                                    <button onClick={removeFormCartHandler}>Remove From Cart</button>
+                                </div>
+                            ) : (
+                                prod.available ? (
+                                    <div className="frombtn">
+                                        <button onClick={addToCartHander}>Add To Cart</button>
+                                    </div>
+                                ):(
+                                    <div>
+                                    <button  className="disable_product">Not Availabe</button>
+                                </div>
+                                )
+                            )
+                        }
+
                     </div>
                 </div>
             </div>
-        </div>
         </>
     );
 };
