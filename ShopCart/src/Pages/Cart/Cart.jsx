@@ -3,10 +3,10 @@ import CartItem from './../../components/Cart_item/CartItem';
 import { useSelector,useDispatch } from "react-redux";
 import { clearCart } from "../../store/reducers/CartReducer";
 const Cart = () => {
-    const cart = useSelector(shopcart=>shopcart.cart)
+    const cart = useSelector(shopcart => shopcart.cart.cartItems) || [];
     const dispatch = useDispatch()
     
-    let totalCart =  cart.reduce((acc,item)=>acc+item.price*item.quantity,0)
+    let totalCart =  cart?.reduce((acc,item)=>acc+item.price*item.quantity,0)
 
     const clearCartHandler = ()=>{
         dispatch(clearCart())

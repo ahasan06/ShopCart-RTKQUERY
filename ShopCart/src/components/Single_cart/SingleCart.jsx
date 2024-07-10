@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeCart } from '../../store/reducers/CartReducer';
 const SingleCart = ({ prod }) => {
 
-    const cart = useSelector(storeState => storeState.cart)
-    console.log("cart", cart);
+    const cart = useSelector(storeState => storeState.cart.cartItems)
     const dispatch = useDispatch()
 
     const addToCartHander = () => {
@@ -16,9 +15,7 @@ const SingleCart = ({ prod }) => {
         dispatch(removeCart(prod))
     }
 
-    const IsinCart = cart.some(item => item.id == prod.id)
-    console.log("Is in cart", IsinCart);
-
+    const IsinCart = cart?.some(item => item.id == prod.id)
     return (
         <>
             <div className="cart__section">
@@ -37,7 +34,7 @@ const SingleCart = ({ prod }) => {
                                     <button onClick={removeFormCartHandler}>Remove From Cart</button>
                                 </div>
                             ) : (
-                                prod.available ? (
+                                prod.available ==="true" ? (
                                     <div className="frombtn">
                                         <button onClick={addToCartHander}>Add To Cart</button>
                                     </div>

@@ -1,23 +1,85 @@
+/* eslint-disable react/prop-types */
 import "./AdminProductCart.css"
-const AdminProductCart = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { useRemoveProductMutation } from "../../store/features/apiSlice";
+import { setEditProduct } from "../../store/reducers/CartReducer";
+const AdminProductCart = ({ prod }) => {
+
+    const [deleteProd] = useRemoveProductMutation()
+    const dispatch = useDispatch()
+    const editingProduct = useSelector(storeState => storeState.cart.editProduct)
+
+    const removeProductFromShop = () => {
+        const isDelete = window.confirm("Are you sure you want to delete this product?");
+        if (isDelete) {
+            deleteProd(prod.id);
+        }
+    }
+    const editProductHandler = () => {
+        dispatch(setEditProduct(prod))
+    }
+
+
     return (
         <tr>
-        <td className="product">
-            <img src="https://images.unsplash.com/photo-1527698266440-12104e498b76?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90oy1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-        </td>
-        <td>
-            <p>Product 1</p>
-        </td>
-        <td>
-            <p>$500</p>
-        </td>
-        
-        <td>
-           <div>
-            <button className="qty_count product__remove">  <figure>X</figure></button>
-           </div>
-        </td>
-    </tr>
+            <td className="product">
+                <img src={prod.image} alt="" />
+            </td>
+            <td>
+                <p>{prod.name}</p>
+            </td>
+            <td>
+                <p>${prod.price}</p>
+            </td>
+
+            <td>
+                {
+                    prod.available === 'true' ? (
+                        <p>Availabe</p>
+
+                    ) : (
+                        <p>Not Availabe</p>
+                    )
+
+                }
+            </td>
+
+            <td>
+                <p>{prod.issueDate}</p>
+            </td>
+            <td>{
+                editingProduct && editingProduct.id === prod.id ? (
+                    <div>
+                        <button className="qty_count product__edit" >  <figure>Edit Mode On</figure></button>
+                    </div>
+                ) :
+                    (
+                        <div>
+                            <button className="qty_count product__edit" onClick={editProductHandler} >  <figure>Edit</figure></button>
+                        </div>
+                    )
+
+            }
+
+            </td>
+
+            <td>
+                {
+                    editingProduct && editingProduct.id === prod.id ? (
+                        <div className="editMode">
+                            <div className="loader"></div>
+                        </div>
+                    ) : (
+                        <div>
+                            <button className="qty_count product__remove" onClick={removeProductFromShop}>  <figure>X</figure></button>
+                        </div>
+                    )
+                }
+
+            </td>
+
+
+        </tr>
     );
 };
 
