@@ -2,6 +2,7 @@
 
 import './singlecart.css';
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
 import { addToCart, removeCart } from '../../store/reducers/CartReducer';
 const SingleCart = ({ prod }) => {
 
@@ -14,6 +15,7 @@ const SingleCart = ({ prod }) => {
     const removeFormCartHandler = () => {
         dispatch(removeCart(prod))
     }
+
 
     const IsinCart = cart?.some(item => item.id == prod.id)
     return (
@@ -30,22 +32,27 @@ const SingleCart = ({ prod }) => {
                     <div className="cart__btn">
                         {
                             IsinCart ? (
-                                <div className="frombtn">
+                                <div className="frombtn remove__cartBtn">
                                     <button onClick={removeFormCartHandler}>Remove From Cart</button>
                                 </div>
                             ) : (
-                                prod.available ==="true" ? (
+                                prod.available === "true" ? (
                                     <div className="frombtn">
                                         <button onClick={addToCartHander}>Add To Cart</button>
                                     </div>
-                                ):(
-                                    <div>
-                                    <button  className="disable_product">Not Availabe</button>
-                                </div>
-                                )
-                            )
-                        }
 
+                                ) : (
+                                    <div>
+                                        <button className="disable_product">Not Availabe</button>
+                                    </div>
+                                )
+
+                            )
+
+                        }
+                        <div className='frombtn'>
+                            <Link key={prod.id} to={`/product/${prod.id}`}><button className="product_details">Product Details</button></Link>
+                        </div>
                     </div>
                 </div>
             </div>

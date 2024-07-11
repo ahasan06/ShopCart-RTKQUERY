@@ -1,0 +1,101 @@
+:root {
+  font-family: var(--primary-font);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  color-scheme: light dark;
+  --primary-color: #007bff;
+  --secondary-color: #007bff;
+  --hover-color: #71b1f5;
+  --primary-font: 'Roboto', sans-serif;
+  --bg-color: #e9ecef;
+  --text-color: #333;
+  --subtitle-color: #666;
+  --card-bg: #fff;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --btn-bg: #007bff;
+  --btn-bg-hover: #0056b3;
+  --btn-text: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.product__details {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.product__details_container {
+  display: flex;
+  padding: 1.5vw;
+  gap: 3vw;
+  max-width: 62.5vw;
+  min-height: fit-content;
+  margin: 40px auto;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0.104vw 0.208vw rgba(0, 0, 0, 0.1);
+  border-radius: 0.42vw;
+}
+
+.productDetails__header {
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+
+.productDetails__header img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.productDetails__header img:hover {
+  cursor: zoom-in;
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+}
+
+.productDetails__body {
+  max-width: 500px;
+}
+
+.productDetails__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productDetails__content .available {
+  color: green !important;
+}
+
+.productDetails__content .description {
+  font-size: 0.8vw;
+
+}
+
+
+
+.product__reviewSection {
+  display: flex;
+  flex-direction: column;
+  max-width: 62.5vw;
+  max-height: 250px;
+  overflow-y: auto;
+  margin: 40px auto;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0.104vw 0.208vw rgba(0, 0, 0, 0.1);
+  border-radius: 0.42vw;
+  padding: 1.5vw;
+}

@@ -68,3 +68,17 @@
     padding:10px 20px;
     margin-bottom:5px;
 }
+
+.remove__cartBtn button{
+    border: none;
+    font-size:16px;
+    cursor: pointer;
+    background: rgb(53, 105, 98);
+    color: white;
+    padding:10px 20px;
+    margin-bottom:5px;
+}
+.remove__cartBtn button:hover{
+    background: rgb(73, 158, 145);
+ 
+}

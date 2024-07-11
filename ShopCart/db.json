@@ -13,7 +13,7 @@
     {
       "id": "2",
       "name": "Phantom X20 Ultra",
-      "price": "200",
+      "price": "1998",
       "image": "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90oy1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "A sleek and powerful smartphone with advanced camera features.",
       "longDescription": "The Phantom X20 Ultra is a state-of-the-art smartphone that combines sleek design with powerful performance. It boasts a 6.7-inch AMOLED display with a 120Hz refresh rate, providing vibrant colors and smooth scrolling. The phone is equipped with a top-of-the-line Snapdragon 888 processor, 8GB of RAM, and 256GB of internal storage, ensuring it can handle any task with ease. Its quad-camera system, featuring a 108MP main sensor, allows you to capture stunning photos and videos in any lighting condition. Additionally, the Phantom X20 Ultra supports 5G connectivity, ensuring you stay connected at blazing-fast speeds. With its large 5000mAh battery and fast charging capabilities, this smartphone is designed to keep up with your busy lifestyle.",
@@ -69,6 +69,71 @@
       "longDescription": "The SnapShot Pro 400 is a professional-grade camera designed for photographers who demand the best in image quality and performance. It features a 24.2MP full-frame sensor and a fast autofocus system, allowing you to capture stunning, high-resolution images with incredible detail. The camera supports 4K video recording, providing cinematic video quality for your projects. It also includes a variety of advanced features, such as in-body image stabilization, dual card slots, and a high-resolution electronic viewfinder. The SnapShot Pro 400 is built with a durable magnesium alloy body that is weather-sealed, ensuring it can withstand the rigors of professional use. Whether you're shooting landscapes, portraits, or action shots, this camera delivers exceptional performance and reliability.",
       "available": "true",
       "issueDate": "2024-07-10"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1570",
+      "user": "Nahid",
+      "rating": "3",
+      "comment": "Good performance but battery life could be better.",
+      "prodId": "1"
+    },
+    {
+      "id": "be40",
+      "user": "Watson",
+      "rating": "4",
+      "comment": "Really sleek design and fast processing speeds.",
+      "prodId": "1"
+    },
+    {
+      "id": "c4a3",
+      "user": "Habib",
+      "rating": "3",
+      "comment": "Decent phone but expected better camera quality at this price point.",
+      "prodId": "2"
+    },
+    {
+      "id": "f250",
+      "user": "Olla",
+      "rating": "4",
+      "comment": "Great for gaming, no lag at all even with high settings!",
+      "prodId": "5"
+    },
+    {
+      "id": "d350",
+      "user": "Emily",
+      "rating": "5",
+      "comment": "The AMOLED display is stunning, especially for watching movies.",
+      "prodId": "3"
+    },
+    {
+      "id": "a451",
+      "user": "Jack",
+      "rating": "2",
+      "comment": "Too pricey for the features it offers, not very satisfied.",
+      "prodId": "6"
+    },
+    {
+      "id": "b362",
+      "user": "Sarah",
+      "rating": "5",
+      "comment": "Perfect for my photography needs, excellent image quality!",
+      "prodId": "7"
+    },
+    {
+      "id": "e563",
+      "user": "Alex",
+      "rating": "4",
+      "comment": "Solid build and reliable, good value for the money.",
+      "prodId": "4"
+    },
+    {
+      "id": "e697",
+      "user": "Ahasan",
+      "rating": "5",
+      "comment": "Good performance",
+      "prodId": "1"
     }
   ]
 }

@@ -1,0 +1,20 @@
+.reviewCard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    max-height: 250px;
+    width: 100%;
+    background-color: #b6edfd;
+    box-shadow: 0 0.104vw 0.208vw rgba(0, 0, 0, 0.1);
+    border-radius: 0.42vw;
+    padding: 1.5vw;
+}
+
+.reviewCard .reviewerName span{
+    opacity: 70%;
+
+}
+.reviewCard p{
+    color: black;
+
+}
