@@ -30,6 +30,7 @@ export const rootApi = createApi({
             }),
             invalidatesTags: ['reviews']
           }),
+          
           getReviewsByProductId: builder.query({
             query: (prodId) => `reviews?prodId=${prodId}`,
             providesTags: ["reviews"]
